@@ -9,6 +9,8 @@ from .forms import Postform
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from .models import Post, Category
+
 # Create your views here.
 
 @login_required
@@ -37,7 +39,15 @@ def Edit_View(request, *args,**kwargs):
 	return render(request,'post_edit.html')
 
 def Primavera_View(request, *args, **kwargs):
-	return render(request, "primavera.html")
+	return render(request, "primaverahome.html")
+
+def NovaPrimavera_View(request, *args, **kwargs):
+   	return render(request, "primavera_new.html")
+
+
+
+def Devocional_View(request, *args, **kwargs):
+	return render(request, "devocionais.html")
 
 def Verão_View(request, *args, **kwargs):
 	return render(request, "verão.html")
@@ -57,21 +67,21 @@ class BlogListView(ListView):
 class BlogDetailView(DetailView):
     model = Post
     template_name = 'post_detail.html'
-    #context_object_name = 'custom'
-
-def Detail_View(request, *args, **kwargs):
-	return render(request, "post_detail.html")
+    
+    
 
 class BlogCreateView(LoginRequiredMixin,SuccessMessageMixin,CreateView):
     model = Post
     template_name = 'post_new.html'
     form_class = Postform
     success_message = "%(field)s - criado com sucesso"
-    
-    def prima(self, form):
-        if titulo == 'Primavera':
-            return render("primavera.html")
 
+    Category = (
+        ('Primavera','Verão'),
+        ('Outono','Inverno'),
+    )
+
+  
     def form_valid(self, form):
         obj = form.save(commit=False)
         obj.autor = self.request.user
@@ -88,7 +98,7 @@ class BlogUpdateView(LoginRequiredMixin,SuccessMessageMixin,UpdateView):
     model = Post
     form_class = Postform
     template_name = 'post_edit.html'
-    #fields = ('titulo','conteudo')
+    fields = ('titulo','conteudo')
     success_message = "%(field)s - alterado com sucesso"
 
     def form_valid(self, form):

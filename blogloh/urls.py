@@ -2,6 +2,7 @@
 from django.urls import path
 
 from . import views
+from Primavera import viewsprimavera
 
 urlpatterns = [
     path('', views.BlogListView.as_view(),name='home'),  
@@ -11,6 +12,7 @@ urlpatterns = [
     path('post/<int:pk>/edit/', views.BlogUpdateView.as_view(),name='post_edit'),
     path('post/<int:pk>/delete/', views.BlogDeleteView.as_view(), name='post_delete'),
     path('post_detail.html', views.Detail_View,name='Detail'),
-       
+    #path('post/<int:pk>/Primavera/', views.NovaPrimavera_view,name='primavera_nova'),
+  
 
 ]

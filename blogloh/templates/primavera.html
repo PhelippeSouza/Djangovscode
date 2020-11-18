@@ -2,6 +2,7 @@
 {% load static %}
 {% block title %} Estações-Primavera {% endblock title %}
 {% block header %}
+{% load bootstrap %}
 <!-- Page Header -->
 
 {% if object.imagem %}
@@ -40,5 +41,8 @@
                 <a href="" class="btn btn-danger"> Deletar Postagem do Blog </a>
               </div>    
         </div>
+
+
+        
         {% endif %}
 {% endblock content %}
