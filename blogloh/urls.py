@@ -12,7 +12,8 @@ urlpatterns = [
     path('post/<int:pk>/edit/', views.BlogUpdateView.as_view(),name='post_edit'),
     path('post/<int:pk>/delete/', views.BlogDeleteView.as_view(), name='post_delete'),
     path('post_detail.html', views.Detail_View,name='Detail'),
-    #path('post/<int:pk>/Primavera/', views.NovaPrimavera_view,name='primavera_nova'),
-  
+    # path('post/<int:pk>/Primavera/', viewsprimavera.Primavera_View,name='primavera_new'),
+
+   
 
 ]

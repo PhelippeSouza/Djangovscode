@@ -12,23 +12,30 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from .modelsprimavera import Post, Category
 # Create your views here.
 
+   
+
+def Primavera_View(request, *args, **kwargs):
+	return render(request, "primaverahome.html")
+
 def NovaPrimavera_View(request, *args, **kwargs):
-    return render(request, "primavera_new.html")
+	return render(request, "primavera_new.html")
+
+
 
 
 class BlogListView(ListView):
     model = Post
-    template_name = 'home.html'
+    template_name = 'primavera_new.html'
 
 class BlogDetailView(DetailView):
     model = Post
-    template_name = 'post_detail.html'
+    template_name = 'detail.html'
     
     
 
 class BlogCreateView(LoginRequiredMixin,SuccessMessageMixin,CreateView):
     model = Post
-    template_name = 'primavera_new.html'
+    template_name = 'primaverahome.html'
     form_class = Postform
     success_message = "%(field)s - criado com sucesso"
 

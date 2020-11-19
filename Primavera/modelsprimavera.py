@@ -28,6 +28,7 @@ class Category(models.Model):
         verbose_name = "Categoria"
         verbose_name_plural = "Categorias"
         ordering = ['-criado']
+    
 
     def __str__(self):
         return self.nome
@@ -53,9 +54,7 @@ class Post(models.Model):
     objects   = models.Manager()
     published = PublishedManager()
 
-   
-    def get_absolute_url(self):
-        return reverse('primavera_new',args=[self.pk])
+
 
     def get_absolute_url_update(self):
         return reverse('post_edit',args=[self.pk])
@@ -81,4 +80,3 @@ def insert_slug(sender,instance,**kwargs):
         instance.slug = slugify(instance.titulo)
         return instance.save()
 
-# Create your models here.

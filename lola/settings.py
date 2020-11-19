@@ -41,10 +41,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blogloh',
     'ckeditor',
+    'bootstrap',
     'bootstrapform', 
     'accounts',
     'Primavera',
     #'contact',
+    'Verao',
 ]
 
 MIDDLEWARE = [

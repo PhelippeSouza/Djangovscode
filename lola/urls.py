@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import include,path
 from blogloh import views
 from Primavera import viewsprimavera
+from Verao import viewsverao
 
 
 urlpatterns = [
@@ -24,18 +25,18 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/', include('accounts.urls')),
     path('Primavera/', include('Primavera.urls')),
-   # path('contact/',include('contact.urls')),
     path('', include('blogloh.urls')),
-    # path('primavera.html', views.Primavera_View, name = 'Primavera'),
-    path('verão.html', views.Verão_View, name = 'Verão'),
+    path('verãohome.html', viewsverao.Verãohome_View, name = 'Verão'),
     path('outono.html', views.Outono_View, name = 'Outono'),
     path('inverno.html', views.Inverno_View, name = 'Inverno'),
-    path('post_new.html', views.BlogCreateView.as_view(), name = 'Nova Postagem'),
+    path('primaverahome.html', views.BlogCreateView.as_view(), name = 'Nova Postagem'),
     path('post_edit.html', views.BlogUpdateView.as_view(),name='post_edit'),
-    path('post_detail.html', views.Detail_View,name='Detail'),
-    path('primaverahome.html', views.Primavera_View, name = 'PrimaveraHome'),
+    path('primaveradetail.html', viewsprimavera.BlogDetailView,name='Detail'),
+    path('primaverahome.html', viewsprimavera.NovaPrimavera_View, name = 'Primavehome'),
     path('devocionais.html', views.Devocional_View, name = 'Devocional'),
-    path('primavera_new.html', views.NovaPrimavera_View, name = 'Nova Primavera'),
+    path('primavera_new.html', viewsprimavera.Primavera_View, name = 'Primavera_new'),
+   
+
     
 ]
 

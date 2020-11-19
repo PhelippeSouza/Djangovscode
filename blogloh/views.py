@@ -17,9 +17,6 @@ from .models import Post, Category
 def hello(request):
     return HttpResponse('Olá Mundo')
 
-
-
-
     
 def Home_view(request, *args, **kwargs):
 	return render(request, 'home.html')
@@ -37,13 +34,6 @@ def Detail_View(request, *args, **kwargs):
   
 def Edit_View(request, *args,**kwargs):
 	return render(request,'post_edit.html')
-
-def Primavera_View(request, *args, **kwargs):
-	return render(request, "primaverahome.html")
-
-def NovaPrimavera_View(request, *args, **kwargs):
-   	return render(request, "primavera_new.html")
-
 
 
 def Devocional_View(request, *args, **kwargs):

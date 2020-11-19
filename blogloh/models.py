@@ -67,27 +67,7 @@ class Post(models.Model):
 
     def __str__(self):
         return self.titulo
-    
 
-
-    # def get_absolute_url(self):
-    #     return reverse('primavera_nova',args=[self.pk])
-
-    # def get_absolute_url_update(self):
-    #     return reverse('post_edit',args=[self.pk])
-    # @property
-    # def view_image(self):
-    #     return mark_safe('<img src="%s" width="400px" />'%self.imagem.url)   
-    #     view_image.short_description = "Imagem Cadastrada" 
-    #     view_image.allow_tags = True    
-
-    # class Meta:
-    #     ordering = ('-publicado',)
-
-    # def __str__(self):
-    #     return self.titulo
-
-    
 
 @receiver(post_save,sender=Post)
 def insert_slug(sender,instance,**kwargs):
@@ -97,4 +77,3 @@ def insert_slug(sender,instance,**kwargs):
         instance.slug = slugify(instance.titulo)
         return instance.save()
 
-# Create your models here.
