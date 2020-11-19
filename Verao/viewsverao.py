@@ -4,12 +4,12 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
 from django.views.generic import ListView,DetailView,UpdateView,DeleteView
 from django.views.generic.edit import CreateView
-from .models import Post
-from .forms import Postform
+from .modelsverao import Post
+from .formsverao import Postform
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Post, Category
+from .modelsverao import Category
 # Create your views here.
 
    
@@ -21,6 +21,8 @@ def Verãohome_View(request, *args, **kwargs):
 	return render(request, "verãohome.html")
 
 
+def Verão_detail(request, *args, **kwargs):
+	return render(request, "verãodetail.html")
 
 
 class BlogListView(ListView):
@@ -29,13 +31,13 @@ class BlogListView(ListView):
 
 class BlogDetailView(DetailView):
     model = Post
-    template_name = 'detail.html'
+    template_name = 'veraodetail.html'
     
     
 
 class BlogCreateView(LoginRequiredMixin,SuccessMessageMixin,CreateView):
     model = Post
-    template_name = 'primaverahome.html'
+    template_name = 'verãoview.html'
     form_class = Postform
     success_message = "%(field)s - criado com sucesso"
 
@@ -61,7 +63,6 @@ class BlogUpdateView(LoginRequiredMixin,SuccessMessageMixin,UpdateView):
     model = Post
     form_class = Postform
     template_name = 'post_edit.html'
-    fields = ('titulo','conteudo')
     success_message = "%(field)s - alterado com sucesso"
 
     def form_valid(self, form):

@@ -1,0 +1,95 @@
+{% extends 'baseoutono.html' %}
+{% load static %}
+{% block title %} Estçãoes-Outono {% endblock title %}
+{% block header %}
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url({% static 'img/outono.jpeg' %})">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1></h1>
+            <span class="subheading"> </span>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+ 
+  </header>
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" href="devocionais.html">Devocionais</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Disciplina Bíblica</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Identidade</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Propósito</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Livros</a>
+    </li>
+  </ul>
+<form>
+  <style>
+    button{
+      font-family:'lobster'
+      
+    }
+  
+  
+  </style>
+</form>
+
+
+  {% endblock header %}
+{% block content %}
+    {% for post in object_list %}
+        <div class="post-preview">
+            <a href="{{post.get_absolute_url}}">
+              <h2 class="post-title">
+               {{ post.titulo }}
+             
+              </h2>
+              <style>
+                h3{ font-family:"lobster";
+                    font-size: larger;
+                }
+
+                h2{  font-family:"lobster";
+                    font-size: larger;
+
+                }
+              </style>
+
+              <h3 class="post-subtitle">
+                    {{ post.conteudo|safe|truncatechars:"200" }}
+              </h3>
+            </a>
+            <p class="post-meta">Posted by
+              <a href="#">{{user}}</a>
+              on July 8, 2019</p>
+        </div>
+        <hr>
+    {% endfor %}
+    <div class="clearfix">
+      <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+    </div>
+{% endblock content %}
+
+<!--
+  <div class="post-entry">
+            <h2><a href="{{post.get_absolute_url}}"></a></h2>
+            <p>{{ post.conteudo }} </p>
+        </div>
+
+             
+           
+            
+-->

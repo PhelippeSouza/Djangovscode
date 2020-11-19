@@ -45,8 +45,9 @@ INSTALLED_APPS = [
     'bootstrapform', 
     'accounts',
     'Primavera',
-    #'contact',
     'Verao',
+    'outono',
+    'inverno',
 ]
 
 MIDDLEWARE = [

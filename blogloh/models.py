@@ -36,8 +36,8 @@ class Post(models.Model):
     )
     titulo = models.CharField(verbose_name="Título",max_length=250, null=True)
     slug   = models.SlugField(max_length=250, null=True)
-    autor  = models.ForeignKey(User,
-                               on_delete=models.CASCADE, null=True)
+    #autor  = models.ForeignKey(User,
+     #                          on_delete=models.CASCADE, null=True)
     categoria = models.ManyToManyField(Category, related_name="get_posts")
     imagem    = models.ImageField(upload_to="blog",blank=True, null=True)
     conteudo  = RichTextField(verbose_name="Conteúdo")

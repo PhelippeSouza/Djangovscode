@@ -88,7 +88,6 @@ class BlogUpdateView(LoginRequiredMixin,SuccessMessageMixin,UpdateView):
     model = Post
     form_class = Postform
     template_name = 'post_edit.html'
-    fields = ('titulo','conteudo')
     success_message = "%(field)s - alterado com sucesso"
 
     def form_valid(self, form):
