@@ -7,13 +7,12 @@ from inverno import viewsinverno
 
 
 urlpatterns = [
-    path('', viewsinverno.BlogListView.as_view(),name='home'),  
-    path('post/teste/', viewsinverno.hello, name='hello'),
+    path('', viewsinverno.BlogListView.as_view(),name='invernohome'),  
+    #path('post/teste/', viewsinverno.hello, name='hello'),
+    path('inverno/<int:pk>/edit/', viewsinverno.BlogUpdateView.as_view(),name='inverno_edit'),
+    path('inverno/<int:pk>/delete/', viewsinverno.BlogDeleteView.as_view(), name='inverno_delete'),
     path('post/new/', viewsinverno.BlogCreateView.as_view(), name='post_new'),
-    path('post/<int:pk>/detail/', viewsinverno.BlogDetailView.as_view(),name='post_detail'),
-    path('post/<int:pk>/edit/', viewsinverno.BlogUpdateView.as_view(),name='post_edit'),
-    path('post/<int:pk>/delete/', viewsinverno.BlogDeleteView.as_view(), name='post_delete'),
-    path('post_detail.html', viewsinverno.Detail_View,name='Detail'),
-   
+    path('post/<int:pk>/inverno/', viewsinverno.BlogDetailView.as_view(),name='post_inverno'),
+
 
 ]

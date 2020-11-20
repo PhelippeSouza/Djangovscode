@@ -56,9 +56,10 @@ class Post(models.Model):
 
   
 def get_absolute_url(self):
-    return reverse('post_detail',args=[self.pk])
+    return reverse('primaveradetail.html',args=[self.pk])
+
 def get_absolute_url_update(self):
-    return reverse('post_edit',args=[self.pk])
+    return reverse('primavera_edit',args=[self.pk])
 
   
     @property

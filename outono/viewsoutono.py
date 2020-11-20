@@ -25,7 +25,7 @@ def Novooutono_View(request, *args, **kwargs):
 
 class BlogListView(ListView):
     model = Post
-    template_name = 'outononew.html'
+    template_name = 'outonohome.html'
 
 class BlogDetailView(DetailView):
     model = Post
@@ -78,7 +78,7 @@ class BlogUpdateView(LoginRequiredMixin,SuccessMessageMixin,UpdateView):
 
 class BlogDeleteView(LoginRequiredMixin,SuccessMessageMixin,DeleteView):
     model = Post
-    template_name = 'post_delete.html'
+    template_name = 'outono_delete.html'
     success_url = reverse_lazy('home')
     success_message = "Deletado com sucesso"
 

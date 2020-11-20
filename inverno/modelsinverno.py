@@ -51,10 +51,16 @@ class Post(models.Model):
     published = PublishedManager()
 
     def get_absolute_url(self):
-        return reverse('post_detail',args=[self.pk])
+        return reverse('post_inverno',args=[self.pk])
 
     def get_absolute_url_update(self):
-        return reverse('post_edit',args=[self.pk])
+        return reverse('inverno_edit',args=[self.pk])
+
+    def get_absolute_url_deletar(self):
+        return reverse('inverno_delete',args=[self.pk])
+   
+   
+   
     @property
     def view_image(self):
         return mark_safe('<img src="%s" width="400px" />'%self.imagem.url)   

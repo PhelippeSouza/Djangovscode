@@ -2,9 +2,13 @@
 {% load static %}
 {% block title %} Estçãoes-Verão {% endblock title %}
 {% block header %}
+{% if object.imagem %}
 
-  <!-- Page Header -->
-  <header class="masthead" style="background-image: url({% static 'img/verão.jpeg' %})">
+<header class="masthead" style="background-image: url({{ object.imagem.url }})"></header>
+  <div class=""></div>
+{% else %}
+<header class="masthead" style="background-image: url({% static 'img/verão.jpeg' %})">
+{% endif %}
     <div class="overlay"></div>
     <div class="container">
       <div class="row">

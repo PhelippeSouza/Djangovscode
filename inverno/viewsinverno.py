@@ -17,39 +17,36 @@ from .modelsinverno import Category
 
    
 
-def Inverno_View(request, *args, **kwargs):
-	return render(request, "invernoview.html")
 
-def Invernohome_View(request, *args, **kwargs):
-	return render(request, "invernohome.html")
+# def Home_view(request, *args, **kwargs):
+# 	return render(request, 'invernohome.html')
 
-
-def Inverno_New(request, *args, **kwargs):
-	return render(request, "invernonew.html")
-
-def Inverno_detail(request, *args, **kwargs):
-	return render(request, "inverdetail.html")
+# def Inverno_New(request, *args, **kwargs):
+#     return render(request, "invernonew.html")
 
 
-
+# def Detail_View(request, *args, **kwargs):
+# 	return render(request, 'post_inverno.html')
 
 
 
 class BlogListView(ListView):
     model = Post
-    template_name = 'verãohome.html'
+    template_name = 'invernohome.html'
+
+    
 
 class BlogDetailView(DetailView):
     model = Post
-    template_name = 'invernodetail.html'
+    template_name = 'post_inverno.html'
     
-    
-
 class BlogCreateView(LoginRequiredMixin,SuccessMessageMixin,CreateView):
     model = Post
     template_name = 'invernonew.html'
     form_class = Postform
     success_message = "%(field)s - criado com sucesso"
+
+
 
     Category = (
         ('Primavera','Verão'),
@@ -72,7 +69,7 @@ class BlogCreateView(LoginRequiredMixin,SuccessMessageMixin,CreateView):
 class BlogUpdateView(LoginRequiredMixin,SuccessMessageMixin,UpdateView):
     model = Post
     form_class = Postform
-    template_name = 'post_edit.html'
+    template_name = 'inverno_edit.html'
     success_message = "%(field)s - alterado com sucesso"
 
     def form_valid(self, form):
@@ -89,7 +86,7 @@ class BlogUpdateView(LoginRequiredMixin,SuccessMessageMixin,UpdateView):
 
 class BlogDeleteView(LoginRequiredMixin,SuccessMessageMixin,DeleteView):
     model = Post
-    template_name = 'post_delete.html'
+    template_name = 'inverno_delete.html'
     success_url = reverse_lazy('home')
     success_message = "Deletado com sucesso"
 

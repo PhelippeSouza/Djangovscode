@@ -12,17 +12,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from .modelsverao import Category
 # Create your views here.
 
-   
 
-def Verão_View(request, *args, **kwargs):
-	return render(request, "verãoview.html")
-
-def Verãohome_View(request, *args, **kwargs):
-	return render(request, "verãohome.html")
-
-
-def Verão_detail(request, *args, **kwargs):
-	return render(request, "verãodetail.html")
 
 
 class BlogListView(ListView):
@@ -62,7 +52,7 @@ class BlogCreateView(LoginRequiredMixin,SuccessMessageMixin,CreateView):
 class BlogUpdateView(LoginRequiredMixin,SuccessMessageMixin,UpdateView):
     model = Post
     form_class = Postform
-    template_name = 'post_edit.html'
+    template_name = 'verao_edit.html'
     success_message = "%(field)s - alterado com sucesso"
 
     def form_valid(self, form):

@@ -12,20 +12,16 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from .modelsprimavera import Post, Category
 # Create your views here.
 
-   
 
-def Primavera_View(request, *args, **kwargs):
-	return render(request, "primaverahome.html")
-
-def NovaPrimavera_View(request, *args, **kwargs):
-	return render(request, "primavera_new.html")
-
+    
+def Primavera_view(request, *args, **kwargs):
+	return render(request, 'primavera_new.html')
 
 
 
 class BlogListView(ListView):
     model = Post
-    template_name = 'primavera_new.html'
+    template_name = 'primavera_home.html'
 
 class BlogDetailView(DetailView):
     model = Post
@@ -35,7 +31,7 @@ class BlogDetailView(DetailView):
 
 class BlogCreateView(LoginRequiredMixin,SuccessMessageMixin,CreateView):
     model = Post
-    template_name = 'primaverahome.html'
+    template_name = 'primavera_new.html'
     form_class = Postform
     success_message = "%(field)s - criado com sucesso"
 
@@ -60,7 +56,7 @@ class BlogCreateView(LoginRequiredMixin,SuccessMessageMixin,CreateView):
 class BlogUpdateView(LoginRequiredMixin,SuccessMessageMixin,UpdateView):
     model = Post
     form_class = Postform
-    template_name = 'post_edit.html'
+    template_name = 'primavera_edit.html'
     fields = ('titulo','conteudo')
     success_message = "%(field)s - alterado com sucesso"
 
@@ -78,7 +74,7 @@ class BlogUpdateView(LoginRequiredMixin,SuccessMessageMixin,UpdateView):
 
 class BlogDeleteView(LoginRequiredMixin,SuccessMessageMixin,DeleteView):
     model = Post
-    template_name = 'post_delete.html'
+    template_name = 'primavera_delete.html'
     success_url = reverse_lazy('home')
     success_message = "Deletado com sucesso"
 

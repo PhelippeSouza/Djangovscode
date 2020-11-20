@@ -51,10 +51,10 @@ class Post(models.Model):
     published = PublishedManager()
 
     def get_absolute_url(self):
-        return reverse('post_detail',args=[self.pk])
+        return reverse('verao_detail',args=[self.pk])
 
     def get_absolute_url_update(self):
-        return reverse('post_edit',args=[self.pk])
+        return reverse('verao_edit',args=[self.pk])
     @property
     def view_image(self):
         return mark_safe('<img src="%s" width="400px" />'%self.imagem.url)   
