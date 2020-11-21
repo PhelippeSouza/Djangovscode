@@ -38,7 +38,7 @@
         <div class="card" >           
             <div class="card-body">
                 <a href="{{ object.get_absolute_url_update }}" class="btn btn-primary">+ Editar Postagem do Blog </a>
-                <a href="{% url 'post_delete' object.pk %}" class="btn btn-danger"> Deletar Postagem do Blog </a>
+                <a href="{% url 'inverno_delete' object.pk %}" class="btn btn-danger"> Deletar Postagem do Blog </a>
               </div>    
         </div>
         {% endif %}

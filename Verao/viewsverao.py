@@ -69,7 +69,7 @@ class BlogUpdateView(LoginRequiredMixin,SuccessMessageMixin,UpdateView):
 
 class BlogDeleteView(LoginRequiredMixin,SuccessMessageMixin,DeleteView):
     model = Post
-    template_name = 'post_delete.html'
+    template_name = 'verao_delete.html'
     success_url = reverse_lazy('home')
     success_message = "Deletado com sucesso"
 

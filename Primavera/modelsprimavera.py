@@ -1,6 +1,3 @@
-from django.db import models
-
-# Create your models here.
 
 from django.db import models
 from django.dispatch import receiver
@@ -11,7 +8,6 @@ from django.utils.text import slugify
 from django.db.models.signals import post_save
 from ckeditor.fields import RichTextField
 from django.utils.html import mark_safe
-
 
 
 class PublishedManager(models.Manager):
@@ -28,7 +24,6 @@ class Category(models.Model):
         verbose_name = "Categoria"
         verbose_name_plural = "Categorias"
         ordering = ['-criado']
-    
 
     def __str__(self):
         return self.nome
@@ -40,7 +35,8 @@ class Post(models.Model):
     )
     titulo = models.CharField(verbose_name="Título",max_length=250, null=True)
     slug   = models.SlugField(max_length=250, null=True)
-    #autor  = models.ForeignKey(null=True)
+   # autor  = models.ForeignKey(User,
+    #                           on_delete=models.CASCADE, null=True)
     categoria = models.ManyToManyField(Category, related_name="get_posts")
     imagem    = models.ImageField(upload_to="blog",blank=True, null=True)
     conteudo  = RichTextField(verbose_name="Conteúdo")
@@ -54,14 +50,11 @@ class Post(models.Model):
     objects   = models.Manager()
     published = PublishedManager()
 
-  
-def get_absolute_url(self):
-    return reverse('primaveradetail.html',args=[self.pk])
+    def get_absolute_url(self):
+        return reverse('primavera_detail',args=[self.pk])
 
-def get_absolute_url_update(self):
-    return reverse('primavera_edit',args=[self.pk])
-
-  
+    def get_absolute_url_update(self):
+        return reverse('primavera_edit',args=[self.pk])
     @property
     def view_image(self):
         return mark_safe('<img src="%s" width="400px" />'%self.imagem.url)   
@@ -74,7 +67,6 @@ def get_absolute_url_update(self):
     def __str__(self):
         return self.titulo
 
-    
 
 @receiver(post_save,sender=Post)
 def insert_slug(sender,instance,**kwargs):

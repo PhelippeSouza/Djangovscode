@@ -5,23 +5,19 @@ from django.contrib import messages
 from django.views.generic import ListView,DetailView,UpdateView,DeleteView
 from django.views.generic.edit import CreateView
 from .modelsprimavera import Post
-from .primaveraforms import Postform
+from .formsprimavera import Postform
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .modelsprimavera import Post, Category
+from .modelsprimavera import Category
 # Create your views here.
 
-
-    
-def Primavera_view(request, *args, **kwargs):
-	return render(request, 'primavera_new.html')
 
 
 
 class BlogListView(ListView):
     model = Post
-    template_name = 'primavera_home.html'
+    template_name = 'primaverahome.html'
 
 class BlogDetailView(DetailView):
     model = Post
@@ -31,7 +27,7 @@ class BlogDetailView(DetailView):
 
 class BlogCreateView(LoginRequiredMixin,SuccessMessageMixin,CreateView):
     model = Post
-    template_name = 'primavera_new.html'
+    template_name = 'primaveraview.html'
     form_class = Postform
     success_message = "%(field)s - criado com sucesso"
 
@@ -57,7 +53,6 @@ class BlogUpdateView(LoginRequiredMixin,SuccessMessageMixin,UpdateView):
     model = Post
     form_class = Postform
     template_name = 'primavera_edit.html'
-    fields = ('titulo','conteudo')
     success_message = "%(field)s - alterado com sucesso"
 
     def form_valid(self, form):
@@ -74,7 +69,7 @@ class BlogUpdateView(LoginRequiredMixin,SuccessMessageMixin,UpdateView):
 
 class BlogDeleteView(LoginRequiredMixin,SuccessMessageMixin,DeleteView):
     model = Post
-    template_name = 'primavera_delete.html'
+    template_name = 'post_delete.html'
     success_url = reverse_lazy('home')
     success_message = "Deletado com sucesso"
 

@@ -40,10 +40,12 @@ urlpatterns = [
    
     path('devocionais.html', views.Devocional_View, name = 'Devocional'),
 
-     
-    path('primavera_home.html', viewsprimavera.BlogListView.as_view(), name = 'primavera_home'),
-    path('primavera_detail.html', viewsprimavera.BlogDetailView.as_view(),name='primavera_detail'),
-    path('primavera_new.html', viewsprimavera.BlogCreateView.as_view(), name = 'primavera_new'),
+    
+
+    path('primaveraview.html', viewsprimavera.BlogCreateView.as_view(), name = 'primavera_new'),
+    path('primaveradetail.html', viewsprimavera.BlogDetailView.as_view(),name='primavera_detail'),
+    path('primaverahome.html', viewsprimavera.BlogListView.as_view(), name = 'primavera_home'),
+   
 
     path('verãoview.html', viewsverao.BlogCreateView.as_view(), name = 'Nova Postagem'),
     path('veraodetail.html', viewsverao.BlogDetailView,name='verao_detail'),

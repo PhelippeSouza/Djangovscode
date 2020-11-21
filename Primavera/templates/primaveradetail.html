@@ -5,7 +5,7 @@
 <!-- Page Header -->
 
 {% if object.imagem %}
-<header class="masthead" style="background-image: url({% static 'img/primavera.jpeg' %})">
+<header class="masthead" style="background-image: url({{ object.imagem.url }})">
 {% else %}
 <header class="masthead" style="background-image: url({% static 'img/primavera.jpeg' %})">
 {% endif %}
@@ -37,7 +37,7 @@
         <div class="card" >           
             <div class="card-body">
                 <a href="{{ object.get_absolute_url_update }}" class="btn btn-primary">+ Editar Postagem do Blog </a>
-                <a href="" class="btn btn-danger"> Deletar Postagem do Blog </a>
+                <a href="{% url 'primavera_delete' object.pk %}" class="btn btn-danger"> Deletar Postagem do Blog </a>
               </div>    
         </div>
 
