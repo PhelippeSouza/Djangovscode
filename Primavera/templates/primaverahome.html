@@ -9,7 +9,7 @@
 {% else %}
 <header class="masthead" style="background-image: url({% static 'img/primavera.jpeg' %})">
 {% endif %}
-    <div class="overlay"></div>
+    <div class=""></div>
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
@@ -25,7 +25,7 @@
   </header>
   <ul class="nav nav-tabs">
     <li class="nav-item">
-      <a class="nav-link active" href="devocionais.html">Devocionais</a>
+      <a class="nav-link" href="devocionais.html">Devocionais</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="#">Disciplina Bíblica</a>
@@ -40,17 +40,22 @@
       <a class="nav-link" href="#">Livros</a>
     </li>
   </ul>
-<form>
-  <style>
-    button{
-      font-family:'lobster'
-      
-    }
-  
-  
-  </style>
-</form>
 
+
+  <form>
+    <style>
+  
+        body{
+          
+          background-color: rgb(243, 223, 223);
+        }
+      
+    
+    
+    
+    
+    </style>
+  </form>
 
   {% endblock header %}
 {% block content %}
@@ -83,7 +88,7 @@
         <hr>
     {% endfor %}
     <div class="clearfix">
-      <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+      <a class="btn btn float-right" href="#">Voltar ao topo &uarr;</a>
     </div>
 {% endblock content %}
 

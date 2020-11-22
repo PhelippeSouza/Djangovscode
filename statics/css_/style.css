@@ -33,7 +33,7 @@ header  h1 a{
  }
 
 .post-entry h2 a, .post-entry h2 a:visited {
-  color: rgb(8, 8, 8);
+  color: blue;
   text-decoration: none;
 }
 .post-entry p {

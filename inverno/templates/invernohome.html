@@ -1,11 +1,11 @@
 {% extends 'baseinverno.html' %}
 {% load static %}
-{% block title %} Estçãoes-Inverno {% endblock title %}
+{% block title %} Estaçãoes-Inverno {% endblock title %}
 {% block header %}
 
   <!-- Page Header -->
   <header class="masthead" style="background-image: url({% static 'img/inverno.jpeg' %})">
-    <div class="overlay"></div>
+    <div class=""></div>
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
@@ -19,9 +19,23 @@
      
  
   </header>
+  <style>
+    h2{
+      font-family: 'lobster';
+
+    }
+    .nav-item{
+      font-family: 'lobster';
+
+    }
+
+    h3{
+      font-family: 'lobster';
+    }
+  </style>
   <ul class="nav nav-tabs">
     <li class="nav-item">
-      <a class="nav-link active" href="devocionais.html">Devocionais</a>
+      <a class="nav-link " href="devocionais.html">Devocionais</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="#">Disciplina Bíblica</a>
@@ -56,30 +70,30 @@
               <h2 class="post-title">
                {{ post.titulo }}
              
-              </h2>
-              <style>
-                h3{ font-family:"lobster";
-                    font-size: larger;
-                }
-
-                h2{  font-family:"lobster";
-                    font-size: larger;
-
-                }
-              </style>
+                 <form>
+                <style>
+                  body{
+                    background-color: #dbdbdb;
+                    
+                  }
+                
+                
+                </style>
+              </form>
+              
 
               <h3 class="post-subtitle">
                     {{ post.conteudo|safe|truncatechars:"200" }}
               </h3>
             </a>
             <p class="post-meta">Posted by
-              <a href="#">{{user}}</a>
-              on July 8, 2019</p>
+              <a href="#">{{user}} </a>
+              </p>
         </div>
         <hr>
     {% endfor %}
     <div class="clearfix">
-      <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+      <a class="btn btn float-right" href="#">Voltar ao topo &uarr;</a>
     </div>
 {% endblock content %}
 

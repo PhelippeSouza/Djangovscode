@@ -1,11 +1,17 @@
+
 {% extends 'base.html' %}
+
 {% load static %}
-{% block title %} Estçãoes da Vida {% endblock title %} 
+
+{% block title %} Estaçãoes da Vida {% endblock title %} 
 {% block header %}
 
 
   <header class="masthead" style="background-image: url({% static 'img/home.jpeg' %})">
-    <div class=""></div>
+    
+    <div class="">
+    
+  
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
@@ -19,75 +25,155 @@
      
  
   </header>
-<form>
-  <style>
-    button{
-      font-family:'lobster'
-      
-    }
-  
-  
-  </style>
-</form>
 
-<ul class="nav nav-tabs">
-  <li class="nav-item">
-    <a class="nav-link active" href="primaverahome.html">Primavera</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="verãohome.html">Verão</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="outonohome.html">Outono</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="invernohome.html">Inverno</a>
-  </li>
+  <form>
+    <style>
   
-</ul>
+        {
+          
+          background-color: rgb(247, 246, 255);
+        }
+      
+    
+    
+    
+    
+    </style>
+  </form>
+
 
   {% endblock header %}
 {% block content %}
     {% for post in object_list %}
+  
         <div class="post-preview">
             <a href="{{post.get_absolute_url}}">
               <h2 class="post-title">
                {{ post.titulo }}
              
-              </h2>
-              <style>
-                h3{ font-family:"lobster";
-                    font-size: larger;
-                }
-
-                h2{  font-family:"lobster";
-                    font-size: larger;
-
-                }
-              </style>
+              
 
               <h3 class="post-subtitle">
                     {{ post.conteudo|safe|truncatechars:"200" }}
-              </h3>
-            </a>
-            <p class="post-meta">Posted by
+             
               <a href="#">{{user}}</a>
               on July 8, 2019</p>
         </div>
         <hr>
     {% endfor %}
-    <div class="clearfix">
-      <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
-    </div>
-{% endblock content %}
+   
 
-<!--
-  <div class="post-entry">
-            <h2><a href="{{post.get_absolute_url}}"></a></h2>
-            <p>{{ post.conteudo }} </p>
+   
+    </p></div></div></div></div></div></div></div><div
+    class="vc_row-full-width vc_clearfix"></div><div
+    id="mediadoras" data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid padding_bottom board vc_custom_1596549863887 vc_row-has-fill vc_row-no-padding"><div
+    class="wpb_column vc_column_container vc_col-sm-12"><div
+    class="vc_column-inner vc_custom_1596556733805"><div
+    class="wpb_wrapper"><div
+    class="wpb_raw_code wpb_content_element wpb_raw_html" ><div
+    class="wpb_wrapper"><div
+    class="heading-title text-center center wow fadeInUp" data-wow-delay="300ms"><h1 class="darkcolor heading_space">Autora</h1><div
+    class="separator-black"></div></div></div></div><div
+    class="vc_row wpb_row vc_inner vc_row-fluid wrapper"><div
+    class="wpb_column vc_column_container vc_col-sm-3/5"><div
+    class="vc_column-inner vc_custom_1595841639434"><div
+    class="wpb_wrapper"><div
+    class="wpb_text_column wpb_content_element  top-2em col-sm-8 text-md-left" ><div
+    class="wpb_wrapper"><h3 class="fave lilas"><em>Lorhenna Lopes</em></h3><p>Lorhenna Lopes é mãe de uma filha, esposa, apaixonada por palavras e pela força que elas carregam. Bibliotecária por formação, autora por alma e coração, Lorhenna tem um caso sério com a leitura e acredita que a rebelião é íntima e interna.</p><p>Amante de viagem e aventuras, Lorhenna percorreu 35 estados norte-americanos, vivendo com a família em um pequeno motorhome. A autora estreou na escrita com o best-seller 60 dias de Neblina e hoje conta com 7 livros publicados, coordena a Editora...</p></div></div></div></div></div><div
+    class="wpb_column vc_column_container vc_col-sm-2/5"><div
+    class="vc_column-inner vc_custom_1596540856669"><div
+    class="wpb_wrapper"><div
+    class="wpb_single_image wpb_content_element vc_align_left"><figure
+    class="wpb_wrapper vc_figure"><div
+    class="vc_single_image-wrapper   vc_box_border_grey"><img
+    width="400" height="400" src="{% static 'img/lorhenna.jpeg' %}" class="vc_single_image-img attachment-full" alt="" loading="lazy" srcset="{% static 'img/lorhenna.jpeg' %}  500w, {% static 'img/lorhenna.jpeg' %} 250w, {% static 'img/lorhenna.jpeg' %} 500w, {% static 'img/lorhenna.jpeg' %} 70w sizes="(max-width: 712px) 100vw, 712px /></div></figure></div></div></div></div></div><div    class="vc_row wpb_row vc_inner vc_row-fluid wrapper"><div
+    class="wpb_column vc_column_container vc_col-sm-2/5"><div
+    class="vc_column-inner vc_custom_1596540873511"><div>
+
+
+    <style>
+      
+      h5{
+       font-family: 'lobster';
+      }
+      h3{
+       font-family: 'lobster';
+       color: rgb(90, 67, 70);
+      }
+      h2{
+        font-family: 'lobster';
+           color: rgb(97, 76, 79);
+      }
+      h1{
+        font-family: 'lobster';
+      }
+      p{
+        font-family: 'lobster';
+      }
+    </style>
+
+  
+  
+
+
+
+
+
+
+
+
+
+   <div class="heading-title text-center center wow fadeInUp" data-wow-delay="300ms"><h2 class="darkcolor heading_space">Conheça nosso conteúdo</h2></div>
+
+<!---Card-->
+    <div id="card-area">
+      </div class="container">
+        <div class="row">
+          <div class="col-12">
+             <h3 class="main-title">  </h3>
         </div>
 
-             
-           
-            
--->
+        <div class="col-md-3">
+         <div class="card">
+           <img src="{% static 'img/primavera.jpeg' %}" class='card-img-top' alt="Card image cap">
+          <div class="card-body">
+              <h5 class="card-title"></h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="primaverahome.html" class="btn btn" style="background-color:rgb(226, 176, 176);">Primavera</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+        <div class="card">
+          <img src="{% static 'img/outono.jpeg' %}" class='card-img-top' alt="Card image cap">
+         <div class="card-body">
+             <h5 class="card-title"></h5>
+             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+             <a href="verãohome.html" class="btn btn" style="background-color:rgb(227, 231, 172);">Verão</a>
+            </div>
+         </div>
+       </div>
+
+       <div class="col-md-3">
+        <div class="card">
+          <img src="{% static 'img/outono.jpeg' %}" class='card-img-top' alt="Card image cap">
+         <div class="card-body">
+             <h5 class="card-title"></h5>
+             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+             <a href="outonohome.html" class="btn btn" style="background-color:rgb(124, 104, 104);">Outono</a>
+            </div>
+         </div>
+       </div>
+      
+       <div class="col-md-3">
+        <div class="card">
+          <img src="{% static 'img/inverno.jpeg' %}" class='card-img-top' alt="Card image cap">
+         <div class="card-body">
+             <h5 class="card-title"></h5>
+             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+             <a href="invernohome.html" class="btn btn" style="background-color:#ccc;">Inverno</a>
+            </div>
+         </div>
+       </div>
+      
+    {% endblock content %} 

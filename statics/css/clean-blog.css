@@ -6,7 +6,7 @@
 
 body {
   font-size: 20px;
-  color: #161313;
+  color: #212529;
   font-family: 'Lora', 'Times New Roman', serif;
 }
 
@@ -154,7 +154,7 @@ img::-moz-selection {
     transition: transform 0.2s;
     transition: transform 0.2s, -webkit-transform 0.2s;
     border-bottom: 1px solid white;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(245, 236, 236, 0.9);
   }
   #mainNav.is-fixed .navbar-brand {
     color: #212529;
@@ -280,7 +280,7 @@ header.masthead .post-heading .meta a {
 
 .post-preview > a:focus, .post-preview > a:hover {
   text-decoration: none;
-  color:#ccc;
+  color: #0085A1;
 }
 
 .post-preview > a > .post-title {
@@ -418,3 +418,5 @@ footer .copyright {
   font-size: 16px;
   padding: 25px 35px;
 }
+
+

@@ -75,7 +75,7 @@
   line-height: inherit; }
 
 .fa-border {
-  border: solid 0.08em #eee;
+  border: solid 0.08em rgb(22, 19, 19);
   border-radius: .1em;
   padding: .2em .25em .15em; }
 

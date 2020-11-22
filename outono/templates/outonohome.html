@@ -5,7 +5,7 @@
 
   <!-- Page Header -->
   <header class="masthead" style="background-image: url({% static 'img/outono.jpeg' %})">
-    <div class="overlay"></div>
+    <div class=""></div>
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
@@ -17,11 +17,25 @@
       </div>
     </div>
      
- 
+    <style>
+      h2{
+        font-family: 'lobster';
+  
+      }
+      .nav-item{
+        font-family: 'lobster';
+
+      }
+
+      h3{
+        font-family: 'lobster';
+      }
+    </style>
   </header>
+ 
   <ul class="nav nav-tabs">
     <li class="nav-item">
-      <a class="nav-link active" href="devocionais.html">Devocionais</a>
+      <a class="nav-link" href="devocionais.html">Devocionais</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="#">Disciplina Bíblica</a>
@@ -56,17 +70,20 @@
               <h2 class="post-title">
                {{ post.titulo }}
              
-              </h2>
-              <style>
-                h3{ font-family:"lobster";
-                    font-size: larger;
-                }
-
-                h2{  font-family:"lobster";
-                    font-size: larger;
-
-                }
-              </style>
+               <form>
+                <style>
+              
+                    body{
+                      
+                      background-color: rgb(189, 155, 124);
+                    }
+                  
+                
+                
+                
+                
+                </style>
+              </form>
 
               <h3 class="post-subtitle">
                     {{ post.conteudo|safe|truncatechars:"200" }}
@@ -79,17 +96,7 @@
         <hr>
     {% endfor %}
     <div class="clearfix">
-      <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+      <a class="btn btn float-right" href="#">Voltar ao topo &uarr;</a>
     </div>
 {% endblock content %}
 
-<!--
-  <div class="post-entry">
-            <h2><a href="{{post.get_absolute_url}}"></a></h2>
-            <p>{{ post.conteudo }} </p>
-        </div>
-
-             
-           
-            
--->
