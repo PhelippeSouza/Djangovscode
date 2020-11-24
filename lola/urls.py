@@ -1,18 +1,4 @@
-"""lola URL Configuration
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/3.1/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 from django.contrib import admin
 from django.urls import include,path
 from blogloh import views
@@ -38,13 +24,24 @@ urlpatterns = [
     
     path('post_edit.html', views.BlogUpdateView.as_view(),name='post_edit'),
    
-    path('devocionais.html', views.Devocional_View, name = 'Devocional'),
+   
+
 
     
 
     path('primaveraview.html', viewsprimavera.BlogCreateView.as_view(), name = 'primavera_new'),
     path('primaveradetail.html', viewsprimavera.BlogDetailView.as_view(),name='primavera_detail'),
     path('primaverahome.html', viewsprimavera.BlogListView.as_view(), name = 'primavera_home'),
+    path('devocionais.html', viewsprimavera.Devocional_View, name = 'Devocional'),
+    path('disciplina.html', viewsprimavera.Disciplina_View, name = 'Disciplina'),
+    path('identidade.html', viewsprimavera.Identidade_View, name = 'Identidade'),
+    path('proposito.html', viewsprimavera.Proposito_View, name = 'Propósito'),
+    path('livros.html', viewsprimavera.Livros_View, name = 'Livros'),
+
+
+
+
+
    
 
     path('verãoview.html', viewsverao.BlogCreateView.as_view(), name = 'Nova Postagem'),

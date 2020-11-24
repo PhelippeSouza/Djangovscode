@@ -1,15 +1,61 @@
-{% extends 'baseprimavera.html' %}
+
 {% load bootstrap %}
-{% block title %} Nova Postagem Primavera {% endblock title %}
+
 {% block content %}
+{%load static %}
+
+<head>
+    <!-- Bootstrap core CSS -->
+    <link href={% static 'vendor/bootstrap/css/bootstrap.min.css' %} rel="stylesheet">
+    <link href={% static 'vendor/fontawesome-free/css/all.min.css' %} rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- Custom styles for this template -->
+    <link href={% static 'css/clean-blog.min.css' %} rel="stylesheet">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400" rel="stylesheet">
+   
+   
+    <title>{% block title %} Nova Postagem {% endblock title %}</title>
+</head>
+
+
 <div class="container justify-content-center">
         <div class="card" >
           <div class="card-header">
-              
-              <h1>Nova Postagem</h1>
+             
+
+              <h1> Nova Postagem </h1>
           </div>
 
           
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href= ></a>
+    
+      
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" style="background-color:#F19095; "href="primaverahome.html">Home</a>
+          </li>            
+          <li class="nav-item">
+            <a class="nav-link" style="background-color:#F19095;" href="contact.html">Contato</a>
+          </li>   
+          
+           
+            <li class="nav-item"><a class="nav-link" style="background-color:#F19095;" href="{% url 'logout' %}">logout</a></li>
+         
+        
+        </ul>
+      </div>
+    </div>
+  </nav>
+
 </body>
 </html>
           <div class="card-body">

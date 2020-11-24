@@ -15,6 +15,34 @@ from .modelsprimavera import Category
 
 
 
+def Devocional_View(request, *args, **kwargs):
+	return render(request, "devocionais.html")
+
+
+
+def Disciplina_View(request, *args, **kwargs):
+	return render(request, "disciplina.html")
+
+
+
+def Identidade_View(request, *args, **kwargs):
+	return render(request, "identidade.html")
+
+
+
+def Proposito_View(request, *args, **kwargs):
+	return render(request, "proposito.html")
+
+
+
+def Livros_View(request, *args, **kwargs):
+	return render(request, "livros.html")
+
+
+
+
+
+
 class BlogListView(ListView):
     model = Post
     template_name = 'primaverahome.html'

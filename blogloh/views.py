@@ -36,8 +36,8 @@ def Edit_View(request, *args,**kwargs):
 	return render(request,'post_edit.html')
 
 
-def Devocional_View(request, *args, **kwargs):
-	return render(request, "devocionais.html")
+# def Devocional_View(request, *args, **kwargs):
+# 	return render(request, "devocionais.html")
 
 def Verão_View(request, *args, **kwargs):
 	return render(request, "verão.html")
